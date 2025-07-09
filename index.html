@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftMove Removals | Stress-Free Moving Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom CSS for animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hamburger menu icon */
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            transition: all 0.25s;
+            position: relative;
+        }
+        
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background: #fff;
+            transform: rotate(0);
+            transition: all 0.5s;
+        }
+        
+        .hamburger-middle {
+            transform: translateY(7px);
+        }
+        
+        .hamburger-bottom {
+            transform: translateY(14px);
+        }
+        
+        .open {
+            transform: rotate(90deg);
+            transform: translateY(0px);
+        }
+        
+        .open .hamburger-top {
+            transform: rotate(45deg) translateY(6px) translate(6px);
+        }
+        
+        .open .hamburger-middle {
+            display: none;
+        }
+        
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translateY(6px) translate(-6px);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-blue-800 text-white shadow-lg z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold flex items-center">
+                <i class="fas fa-truck-moving mr-2"></i>
+                SwiftMove
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-200 transition">Home</a>
+                <a href="#services" class="hover:text-blue-200 transition">Services</a>
+                <a href="#about" class="hover:text-blue-200 transition">About</a>
+                <a href="#pricing" class="hover:text-blue-200 transition">Pricing</a>
+                <a href="#testimonials" class="hover:text-blue-200 transition">Testimonials</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="hamburger focus:outline-none">
+                    <span class="hamburger-top"></span>
+                    <span class="hamburger-middle"></span>
+                    <span class="hamburger-bottom"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+            <div id="menu" class="absolute hidden flex-col items-center py-8 mt-2 space-y-6 bg-blue-700 w-full left-0 right-0">
+                <a href="#home" class="hover:text-blue-200 transition">Home</a>
+                <a href="#services" class="hover:text-blue-200 transition">Services</a>
+                <a href="#about" class="hover:text-blue-200 transition">About</a>
+                <a href="#pricing" class="hover:text-blue-200 transition">Pricing</a>
+                <a href="#testimonials" class="hover:text-blue-200 transition">Testimonials</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 fade-in">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Stress-Free Moving Services</h1>
+                <p class="text-xl mb-8">Let us handle the heavy lifting while you focus on settling into your new home.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#contact" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-bold hover:bg-blue-100 transition duration-300 text-center">
+                        Get a Free Quote
+                    </a>
+                    <a href="#services" class="border-2 border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-white hover:text-blue-800 transition duration-300 text-center">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 fade-in delay-1">
+                <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Professional movers loading a truck" 
+                     class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Comprehensive moving solutions tailored to your needs</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-1">
+                    <div class="text-blue-700 text-4xl mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Residential Moving</h3>
+                    <p class="text-gray-600">From studio apartments to large family homes, we handle all your belongings with care and professionalism.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-2">
+                    <div class="text-blue-700 text-4xl mb-4">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Office Relocation</h3>
+                    <p class="text-gray-600">Minimize downtime with our efficient office moving services, including IT equipment handling.</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-3">
+                    <div class="text-blue-700 text-4xl mb-4">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Packing Services</h3>
+                    <p class="text-gray-600">Let our experts pack your items using high-quality materials to ensure everything arrives safely.</p>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-1">
+                    <div class="text-blue-700 text-4xl mb-4">
+                        <i class="fas fa-warehouse"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Storage Solutions</h3>
+                    <p class="text-gray-600">Secure, climate-controlled storage facilities for short or long-term needs.</p>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-2">
+                    <div class="text-blue-700 text-4xl mb-4">
+                        <i class="fas fa-piano"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Specialty Items</h3>
+                    <p class="text-gray-600">Pianos, antiques, artwork - we have the expertise to move your most valuable possessions.</p>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-3">
+                    <div class="text-blue-700 text-4xl mb-4">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Long Distance</h3>
+                    <p class="text-gray-600">Relocating across the country? We've got you covered with our nationwide moving network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Our professional moving team" 
+                     class="rounded-lg shadow-xl">
+            </div>
+            <div class="md:w-1/2 fade-in delay-1">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-6">About SwiftMove</h2>
+                <p class="text-lg text-gray-700 mb-6">Founded in 2010, SwiftMove has grown from a small local operation to one of the most trusted moving companies in the region. Our mission is simple: to make moving as stress-free as possible for our customers.</p>
+                <p class="text-lg text-gray-700 mb-6">What sets us apart is our team of dedicated professionals who treat your belongings as if they were their own. We invest in continuous training and state-of-the-art equipment to ensure every move goes smoothly.</p>
+                
+                <div class="grid grid-cols-2 gap-4 mb-8">
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-check text-blue-700"></i>
+                        </div>
+                        <span class="font-medium">Fully Licensed</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-check text-blue-700"></i>
+                        </div>
+                        <span class="font-medium">Insured</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-check text-blue-700"></i>
+                        </div>
+                        <span class="font-medium">Background Checks</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 p-3 rounded-full mr-3">
+                            <i class="fas fa-check text-blue-700"></i>
+                        </div>
+                        <span class="font-medium">Eco-Friendly</span>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 transition duration-300">
+                    Contact Us Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Transparent Pricing</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">No hidden fees - just straightforward pricing for quality service</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plan 1 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-1">
+                    <h3 class="text-xl font-bold mb-4 text-center">Local Move</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-blue-700">$89</span>
+                        <span class="text-gray-500">/hour</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>2 movers + truck</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Minimum 2 hours</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Basic furniture protection</span>
+                        </li>
+                        <li class="flex items-center text-gray-400">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            <span>Packing materials not included</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-blue-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 transition duration-300">
+                        Book Now
+                    </a>
+                </div>
+                
+                <!-- Plan 2 -->
+                <div class="bg-blue-700 text-white p-8 rounded-xl shadow-xl transform scale-105 fade-in delay-2 relative">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-blue-800 px-3 py-1 text-sm font-bold rounded-bl-lg">
+                        MOST POPULAR
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-center">Full Service</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold">$129</span>
+                        <span class="text-blue-200">/hour</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-300 mr-2"></i>
+                            <span>3 movers + large truck</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-300 mr-2"></i>
+                            <span>Minimum 3 hours</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-300 mr-2"></i>
+                            <span>Premium furniture protection</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-yellow-300 mr-2"></i>
+                            <span>Basic packing materials included</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-white text-blue-700 px-6 py-3 rounded-lg font-bold hover:bg-blue-100 transition duration-300">
+                        Book Now
+                    </a>
+                </div>
+                
+                <!-- Plan 3 -->
+                <div class="bg-gray-50 p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 fade-in delay-3">
+                    <h3 class="text-xl font-bold mb-4 text-center">Long Distance</h3>
+                    <div class="text-center mb-6">
+                        <span class="text-4xl font-bold text-blue-700">$2,500+</span>
+                        <span class="text-gray-500">flat rate</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Customized team size</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Door-to-door service</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Full packing/unpacking available</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>30 days free storage</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block text-center bg-blue-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 transition duration-300">
+                        Get a Quote
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 text-gray-600 fade-in delay-3">
+                <p>* All prices are estimates. Final pricing depends on inventory, distance, and other factors.</p>
+                <p>Call us at <a href="tel:+18005551234" class="text-blue-700 font-bold">(800) 555-1234</a> for a precise quote.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">What Our Customers Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Don't just take our word for it - hear from our satisfied customers</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md fade-in delay-1">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">2 weeks ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-6">"SwiftMove made our relocation effortless. The team was punctual, professional, and handled all our belongings with care. They even helped reassemble furniture at our new place!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah J.</h4>
+                            <p class="text-gray-500 text-sm">Local Move</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md fade-in delay-2">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">1 month ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-6">"As a small business owner, I needed to relocate my office with minimal downtime. SwiftMove worked after hours to get everything moved and set up perfectly. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-gray-500 text-sm">Office Relocation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md fade-in delay-3">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 text-xl mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-500 text-sm">3 months ago</span>
+                    </div>
+                    <p class="text-gray-700 mb-6">"Moving cross-country was daunting, but SwiftMove took care of everything. Their packing service was worth every penny - not a single item was damaged in transit."</p>
+                    <div class="flex items-center">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Jennifer L." class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Jennifer L.</h4>
+                            <p class="text-gray-500 text-sm">Long Distance Move</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in delay-3">
+                <a href="#" class="inline-flex items-center text-blue-700 font-bold hover:text-blue-800">
+                    <span>Read more reviews</span>
+                    <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 px-6 bg-blue-800 text-white">
+        <div class="container mx-auto text-center fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make Your Move Stress-Free?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Get started with a free, no-obligation quote today.</p>
+            <a href="#contact" class="inline-block bg-white text-blue-800 px-8 py-4 rounded-lg font-bold hover:bg-blue-100 transition duration-300 text-lg">
+                Get Your Free Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10 fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-6">Contact Us</h2>
+                    <p class="text-lg text-gray-700 mb-8">Have questions or ready to book your move? Fill out the form and we'll get back to you within 24 hours.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Call Us</h4>
+                                <a href="tel:+18005551234" class="text-blue-700 hover:underline">(800) 555-1234</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Email Us</h4>
+                                <a href="mailto:info@swiftmove.com" class="text-blue-700 hover:underline">info@swiftmove.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Visit Us</h4>
+                                <p>123 Moving Way<br>Anytown, ST 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-blue-700"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Hours</h4>
+                                <p>Monday - Friday: 8AM - 6PM<br>
+                                Saturday: 9AM - 4PM<br>
+                                Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 fade-in delay-1">
+                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="move-date" class="block text-gray-700 font-medium mb-2">Move Date</label>
+                            <input type="date" id="move-date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-gray-700 font-medium mb-2">Service Needed</label>
+                            <select id="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select a service</option>
+                                <option value="local">Local Move</option>
+                                <option value="long-distance">Long Distance Move</option>
+                                <option value="office">Office Relocation</option>
+                                <option value="packing">Packing Services</option>
+                                <option value="storage">Storage Solutions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Additional Details</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-blue-700 text-white px-6 py-4 rounded-lg font-bold hover:bg-blue-800 transition duration-300">
+                            Request Free Quote
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-6 bg-gray-100">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600">Everything you need to know about our moving services</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in delay-1">
+                    <button class="faq-btn flex justify-between items-center w-full text-left font-bold text-lg">
+                        <span>How far in advance should I book my move?</span>
+                        <i class="fas fa-plus text-blue-700"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-700">We recommend booking at least 4-6 weeks in advance, especially during peak moving seasons (May-September). However, we often accommodate last-minute moves when possible.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in delay-2">
+                    <button class="faq-btn flex justify-between items-center w-full text-left font-bold text-lg">
+                        <span>What items are prohibited from being moved?</span>
+                        <i class="fas fa-plus text-blue-700"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-700">For safety and legal reasons, we cannot transport hazardous materials including: flammable liquids, compressed gases, firearms, ammunition, perishable food, plants, and pets. Please make separate arrangements for these items.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in delay-3">
+                    <button class="faq-btn flex justify-between items-center w-full text-left font-bold text-lg">
+                        <span>Do you provide packing materials?</span>
+                        <i class="fas fa-plus text-blue-700"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-700">Yes! We offer a full range of packing supplies including boxes, tape, bubble wrap, and specialty containers for dishes, artwork, and wardrobe. These can be purchased separately or included in our full-service packing option.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in delay-1">
+                    <button class="faq-btn flex justify-between items-center w-full text-left font-bold text-lg">
+                        <span>How are your movers trained?</span>
+                        <i class="fas fa-plus text-blue-700"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-700">All SwiftMove team members complete a rigorous 80-hour training program covering proper lifting techniques, furniture disassembly/reassembly, packing methods, and customer service. We also conduct regular refresher courses and safety training.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md fade-in delay-2">
+                    <button class="faq-btn flex justify-between items-center w-full text-left font-bold text-lg">
+                        <span>What happens if something gets damaged during the move?</span>
+                        <i class="fas fa-plus text-blue-700"></i>
+                    </button>
+                    <div class="faq-content mt-4 hidden">
+                        <p class="text-gray-700">While we take every precaution to prevent damage, in the rare case it occurs, we have a straightforward claims process. All moves include basic liability coverage at no extra cost, with options to upgrade to full-value protection.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 fade-in delay-3">
+                <p class="text-lg mb-6">Still have questions? We're happy to help!</p>
+                <a href="#contact" class="inline-block bg-blue-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-800 transition duration-300">
+                    Contact Our Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-truck-moving mr-2"></i>
+                        SwiftMove
+                    </h3>
+                    <p class="text-gray-400">Making your move smooth and stress-free since 2010.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Residential Moving</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Office Relocation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Packing Services</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Storage Solutions</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Long Distance Moves</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-blue-400"></i>
+                            <span>123 Moving Way, Anytown, ST 12345</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-2 text-blue-400"></i>
+                            <a href="tel:+18005551234" class="hover:text-white transition">(800) 555-1234</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            <a href="mailto:info@swiftmove.com" class="hover:text-white transition">info@swiftmove.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-clock mr-2 text-blue-400"></i>
+                            <span>Mon-Fri: 8AM-6PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 SwiftMove Removals. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+        
+        // FAQ accordion
+        const faqBtns = document.querySelectorAll('.faq-btn');
+        
+        faqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('i');
+                
+                // Toggle content visibility
+                content.classList.toggle('hidden');
+                
+                // Toggle icon
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+        
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Run once on page load
+        fadeInOnScroll();
+        
+        // Run on scroll
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('#menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+    </script>
+</body>
+</html>
